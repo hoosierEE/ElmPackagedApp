@@ -1,0 +1,23 @@
+{
+  "name": "QuietPrize",
+  "version": "0.1.1",
+  "manifest_version": 2,
+  "icons": {
+    "16": "img/qp16.png",
+    "128": "img/qp128.png"
+  },
+  "app": {
+    "background": {
+      "scripts": [
+        "/vendor/call-App.js",
+        "/vendor/App.js",
+        "/vendor/elm-runtime.js",
+        "background.js"
+      ]
+    }
+  },
+  "permissions": [
+    "audioCapture"
+  ],
+  "description": "visualization helps kids control the volume of their voice"
+}
