@@ -1,29 +1,47 @@
 #What Is This?
 
-This `src` directory holds all my Elm files, a script for compiling them,
-and a directory called `TheAppItself` which holds all the important files
-for the Chrome Packaged App such as `manifest.json`, `background.js`, and the 
-main `html` file.
+This directory (`src`) holds all my Elm files, a script for compiling them in a certain way,
+and a directory called `TheAppItself` which holds all the Chrome Packaged App - related files
+such as `manifest.json`, `background.js`, and the main `window.html` file.
 
 ### How To Use
-* Put the Elm files here
+* write Elm modules, each with its own `main` function (because each is a self-contained Elm program)
+* save Elm programs in the `src` directory (right here)
 * compile using `./compilr`
-* compiled `*.js` files will be placed in `src/vendor/`
+* check to be sure that the JavaScript files have been generated for each module
+* compiled `*.js` files will be placed in `src/TheAppItself/vendor/`
 * `manifest.json` should reference this path for everything except `background.js`
-
-There is probably more, working on it...
+* finally, load it as an "unpacked extension" in Chrome using [these instructions](http://developer.chrome.com/apps/first_app.html#five)
 
 ### Organization
-The `src` directory looks like this:
+The `src` directory looks like this before running `./compilr`:
 
 ```
 .
 ├── App.elm
 ├── Blocks.elm
-├── buildr.sh
 ├── compilr.sh
 ├── README.md
-├── screenshot.png
+└── TheAppItself
+    ├── background.js
+    ├── img
+    │   ├── example128.png
+    │   └── example16.png
+    ├── manifest.json
+    ├── vendor
+    │   └── elm-runtime.js
+    └── window.html
+
+```
+
+And after running `./compilr` it looks like this:
+
+```
+.
+├── App.elm
+├── Blocks.elm
+├── compilr.sh
+├── README.md
 └── TheAppItself
     ├── background.js
     ├── img
@@ -33,12 +51,16 @@ The `src` directory looks like this:
     ├── vendor
     │   ├── App.js
     │   ├── Blocks.js
-    │   ├── call-App.js
-    │   └── elm-runtime.js
+    │   ├── elm-runtime.js
+    │   ├── start-App.js
+    │   └── start-Blocks.js
     └── window.html
 
 ```
 
-Right now I am inserting the code for each Elm program into `window.html` manually, and adding
-JavaScript variables to `call-App.js` for each Elm program I want to invoke.  Later this might be
-part of the regular build process.  Working on a start to this in the `buildr.sh` script.
+
+At the moment I don't see a good way to script the insertion of the Elm `<div>`s into the 
+HTML document, since for non-fullscreen Elm programs you want to be able to have some control
+over positioning on the screen.  Scripting this part would require something much more advanced.
+
+
