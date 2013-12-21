@@ -57,10 +57,5 @@ And after running `./compilr` it looks like this:
     └── window.html
 
 ```
-
-
-At the moment I don't see a good way to script the insertion of the Elm `<div>`s into the 
-HTML document, since for non-fullscreen Elm programs you want to be able to have some control
-over positioning on the screen.  Scripting this part would require something much more advanced.
-
-
+It may be possible to automatically generate the HTML file in a similar manner, but
+that is beyond the scope of this project. :)
