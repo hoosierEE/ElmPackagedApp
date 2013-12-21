@@ -1,10 +1,10 @@
 {
-  "name": "QuietPrize",
+  "name": "ExampleElmApp",
   "version": "0.1.1",
   "manifest_version": 2,
   "icons": {
-    "16": "img/qp16.png",
-    "128": "img/qp128.png"
+    "16": "img/example16.png",
+    "128": "img/example128.png"
   },
   "app": {
     "background": {
@@ -19,5 +19,5 @@
   "permissions": [
     "audioCapture"
   ],
-  "description": "visualization helps kids control the volume of their voice"
+  "description": "description goes here"
 }

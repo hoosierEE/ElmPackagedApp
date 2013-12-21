@@ -17,24 +17,26 @@ There is probably more, working on it...
 The `src` directory looks like this:
 
 ```
-  .
-  ├── App.elm
-  ├── Blocks.elm
-  ├── buildr.sh
-  ├── compilr.sh
-  ├── README.md
-  └── TheAppItself
-      ├── background.js
-      ├── img
-      │   ├── qp128.png
-      │   └── qp16.png
-      ├── manifest.json
-      ├── vendor
-      │   ├── App.js
-      │   ├── Blocks.js
-      │   ├── call-App.js
-      │   └── elm-runtime.js
-      └── window.html
+.
+├── App.elm
+├── Blocks.elm
+├── buildr.sh
+├── compilr.sh
+├── README.md
+├── screenshot.png
+└── TheAppItself
+    ├── background.js
+    ├── img
+    │   ├── example128.png
+    │   └── example16.png
+    ├── manifest.json
+    ├── vendor
+    │   ├── App.js
+    │   ├── Blocks.js
+    │   ├── call-App.js
+    │   └── elm-runtime.js
+    └── window.html
+
 ```
 
 Right now I am inserting the code for each Elm program into `window.html` manually, and adding
